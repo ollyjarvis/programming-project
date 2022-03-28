@@ -1018,8 +1018,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829609446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.037, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 758907446}
@@ -1044,8 +1044,8 @@ MonoBehaviour:
   sprintSpeed: 13
   controller: {fileID: 829609451}
   velocity: {x: 0, y: 0, z: 0}
-  gravity: -4.905
-  jumpHeight: 0.23
+  gravity: -1.22625
+  jumpHeight: 0.0575
   groundCheck: {fileID: 361602142}
   groundDistance: 0.4
   groundMask:
@@ -1129,7 +1129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053034998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67709cc563a3fb46b0dba9f4313421a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 150
 --- !u!4 &1122966714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e6841c113e10ed743a7ed1e896a3e8a5, type: 3}
