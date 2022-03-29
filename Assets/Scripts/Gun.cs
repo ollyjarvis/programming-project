@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     //Start is called once at the start
     void Start()
     {
-        for(int i = 0; i < 3; i++) //for loop that spawns 3 targets when the game starts
+        for(int i = 0; i < 5; i++) //for loop that spawns 3 targets when the game starts
         {
         spawnTarget(); //runs spawn target function
         }
@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour
     }
         public void spawnTarget()
     {
-        GameObject newTarget = Instantiate(target, new Vector3 (Random.Range(-10.0f, 10.0f), 1 ,Random.Range(-10.0f, 10.0f)), Quaternion.identity); //instantiate new target at random point 
+        GameObject newTarget = Instantiate(target, new Vector3 (Random.Range(-70f, 70f), Random.Range(1f, 10f), Random.Range(-70f, 70f)), Quaternion.identity); //instantiate new target at random point 
         newTarget.SetActive(!newTarget.activeInHierarchy); //set target active
     }
 }

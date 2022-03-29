@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
 
-    public float sensitivity = 100f;
+    private float sensitivity = 100f;
     public Transform playerBody;
 
     float xRotation = 0f;
@@ -15,6 +15,11 @@ public class PlayerLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        
+        if (PlayerPrefs.GetFloat("sens") != 0f)
+        {
+            sensitivity = PlayerPrefs.GetFloat("sens");
+        }
     }
 
     // Update is called once per frame
