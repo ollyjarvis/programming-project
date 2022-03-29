@@ -8,6 +8,8 @@ public class PlayerLook : MonoBehaviour
     private float sensitivity = 100f;
     public Transform playerBody;
 
+    public Canvas paused;
+
     float xRotation = 0f;
 
     // Start is called before the first frame update
@@ -31,8 +33,10 @@ public class PlayerLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
-
+        if (!paused.gameObject.activeInHierarchy)
+        {
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        }
     }
 }

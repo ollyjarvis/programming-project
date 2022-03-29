@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 829609447}
+  paused: {fileID: 749209455}
 --- !u!1 &361602141
 GameObject:
   m_ObjectHideFlags: 0
