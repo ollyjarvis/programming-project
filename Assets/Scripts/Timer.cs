@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -12,6 +13,8 @@ public class Timer : MonoBehaviour
 
     public TextMeshProUGUI timerUI;
 
+    public Canvas paused;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,18 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        newTime();
+        if (timer >= 0)
+        {
+            if (!paused.gameObject.activeInHierarchy)
+            {
+                timer -= Time.deltaTime;
+                newTime();
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void newTime()
