@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
     public Camera playerCam; //takes player camera reference 
     public GameObject target; //takes prefab of the target
 
+    public Canvas paused;
+
     //Start is called once at the start
     void Start()
     {
@@ -31,20 +33,23 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit; //defines a Raycast called hit
-        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit)) //Shoots a raycast in the direction the player 
-        //is looking from the players location and returns what the raycast first intersects.
+        if(!paused.gameObject.activeInHierarchy)
         {
-            Target target = hit.transform.GetComponentInParent<Target>(); //stores the "Target.cs" script of the target in a Target variable called target
-            Transform targetPart = hit.transform; //stores the part of the part of the target hit in a Transform variable
-            if (target != null) //if target is not null then the player hit a target.
+            if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit)) //Shoots a raycast in the direction the player 
+            //is looking from the players location and returns what the raycast first intersects.
             {
-                if (targetPart.name == "Head") //if the name of the target part is "Head"
+                Target target = hit.transform.GetComponentInParent<Target>(); //stores the "Target.cs" script of the target in a Target variable called target
+                Transform targetPart = hit.transform; //stores the part of the part of the target hit in a Transform variable
+                if (target != null) //if target is not null then the player hit a target.
                 {
-                    target.TakeDamage(damage * headshot); //target is dealt damage multiplied by headshot damage
-                }
-                else if (targetPart.name == "Body") //if the name of the target part is "Body"
-                {
-                    target.TakeDamage(damage); //target is dealt damage
+                    if (targetPart.name == "Head") //if the name of the target part is "Head"
+                    {
+                        target.TakeDamage(damage * headshot); //target is dealt damage multiplied by headshot damage
+                    }
+                    else if (targetPart.name == "Body") //if the name of the target part is "Body"
+                    {
+                        target.TakeDamage(damage); //target is dealt damage
+                    }
                 }
             }
         }

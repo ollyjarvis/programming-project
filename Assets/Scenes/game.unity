@@ -1894,6 +1894,7 @@ MonoBehaviour:
   headshot: 4
   playerCam: {fileID: 358737782}
   target: {fileID: 1053034998}
+  paused: {fileID: 749209455}
 --- !u!1001 &1264164879
 PrefabInstance:
   m_ObjectHideFlags: 0
