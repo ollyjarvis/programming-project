@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     //Start is called once at the start
     void Start()
     {
-        for(int i = 0; i < 5; i++) //for loop that spawns 3 targets when the game starts
+        for(int i = 0; i < 5; i++) //for loop that spawns 5 targets when the game starts
         {
         spawnTarget(); //runs spawn target function
         }
